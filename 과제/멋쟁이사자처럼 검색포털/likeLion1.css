@@ -1,0 +1,285 @@
+
+.header{
+    display : flex;
+    height : 200px;
+    padding : 20px;
+    border-bottom : 4px solid #e6c8a0;
+}
+.mainLogoBox{
+    padding-left : 180px;
+}
+#mainLogo{
+    height : 150px;
+}
+.headerContent{
+    display : flex;
+    width : 100%;
+    flex-direction: column;
+}
+.menu{
+    display :flex;
+    justify-content : flex-end;
+    text-decoration-line : underline;
+    line-height : 50px;
+    font-size : 29px;
+    color : #6e6e6e;
+    padding-bottom : 15px;
+}
+#home {
+    padding-right : 25px;
+}
+#my {
+    padding-right : 20px;
+}
+#menu {
+    padding-right : 75px;
+}
+.search{
+    display : flex;
+    flex-direction: row;
+}
+.searchbar{
+    border : 12px solid #e48e19;
+    width : 630px;
+    height : 60px;
+    margin-left :55px;
+}
+#searching{
+    width : 70px;
+    padding: 5px 0 0 20px;
+    background-color: #e2a143;
+    margin-left : 2px;
+    padding : 20px 0px 0px 30px;
+}
+/*----------------header----------------*/
+.navbar{
+    display : flex;
+    margin-top : 5px;
+    border-top : 4px solid #e6c8a0;
+    border-bottom : 4px solid #e6c8a0;
+    line-height : 60px;
+    width : 100%;
+}
+#like{
+    margin-left : 180px;
+    font-weight : 900;
+    font-size : 30px;
+}
+#uni{
+    margin-left : 55px;
+    font-size : 25px;
+    font-weight : bolder;
+    color :rgb(134, 132, 132);
+}
+#office{
+    margin-left : 25px;
+    font-size : 25px;
+    font-weight : bolder;
+    color :rgb(134, 132, 132);
+}
+#camp{
+    margin-left : 25px;
+    font-size : 25px;
+    font-weight : bolder;
+    color :rgb(134, 132, 132);
+}
+/*----------------main----------------*/
+.main{
+    display:flex;
+    width : 100%;
+    border-top : 4px solid #e6c8a0;
+    margin-top : 4px;
+}
+.leftmain{
+    width : 50%;
+    padding: 40px 10px 0px 160px;
+}
+
+#likelionlogo{
+    width : 100%;
+}
+#variable{
+    margin-top: 10px;
+    background-color : #feb568;
+    height : 40px;
+    font-size : 30px;
+    font-weight: bold;
+    padding-bottom : 10px;
+    padding-left : 10px;
+}
+.bootcamp{
+    display :flex;
+    flex-direction: column;
+    margin-top : 15px;
+    font-weight : bolder;
+    font-size : 25px;
+    margin-bottom : 20px;
+}
+.boot1{
+    display : flex;
+    justify-content: space-between;
+}
+.boot2{
+    display : flex;
+    justify-content: space-between;
+    margin-top:5px;
+}
+.boot3{
+    display : flex;
+    justify-content: space-between;
+    margin-top:5px;
+}
+.box{
+    background-color:#fcf7f0;
+    width : 33%;
+    height : 50px;
+    text-align: center;
+    padding-top : 25px;
+    font-weight : bolder;
+}
+.track{
+    display :flex;
+    justify-content: space-between;
+    height : 500px;
+    font-size : 28px;
+    font-weight : bold;
+    text-align : center;
+    color : #4a4a4a;
+}
+.design{
+    border-right : 5px solid #e5e5e5;
+    border-bottom : 5px solid #e5e5e5;
+    width : 33%;
+}
+.inter{
+    border-right : 5px solid #e5e5e5;
+    border-bottom : 5px solid #e5e5e5;
+    width : 33%;
+}
+.front{
+    border-right : 5px solid #e5e5e5;
+    border-bottom : 5px solid #e5e5e5;
+    width : 33%;
+}
+#pdimg{
+    padding : 100px 0px 60px;
+    width : 60%;
+}
+#backimg{
+    padding : 100px 0px 60px;
+    width : 60%;
+}
+#frontimg{
+    padding : 100px 0px 60px;
+    width : 60%;
+}
+/*----------------rightmain----------------*/
+.rightmain{
+    width : 29%;
+    padding-top : 40px;
+    height : 100%;
+}
+#howtrack{
+    margin-top: 10px;
+    background-color : #feb567;
+    height : 40px;
+    font-size : 30px;
+    font-weight: bold;
+    padding-bottom : 10px;
+    padding-left : 10px;
+}
+.login{
+    display : flex;
+    flex-direction: column;
+    background-color : #f4f4f4;
+    width : 100%;
+    height : 210px;   
+    padding-top : 20px;
+}
+
+.input{
+    display :flex;
+    background-color: #fff0cf;
+    margin:0px 0px 0px 15px;
+    width : 300px;
+    height : 125px;
+    font-weight : bolder;
+    font-size : 25px;
+    padding-top : 10px;
+}
+#ID{
+    display :flex;
+    justify-content: space-around;
+}
+#PW{
+    padding-top : 10px;
+    display :flex;
+    justify-content: space-around;
+}
+.log{
+    display :flex;
+    justify-content: space-around;
+    margin-bottom : 10px;
+}
+.input{
+    display : flex;
+    flex-direction : column;
+}
+#signup{
+    background-color : #fe7600;
+    color : white;
+    font-size : 30px;
+    text-align: center;
+    margin-top : 10px 5px 0px 5px;
+    padding: 5px 0px;
+    width : 95%;
+    margin-left : 10px;
+}
+#blank{
+    background-color : white;
+    width : 180px;
+    height : 50px;
+}
+#loginbtn{
+    background-color: #f78404;
+    color : white;
+    margin : auto;
+    width : 120px;
+    height : 60%;
+    font-size : 30px;
+    font-weight : 500;
+    text-align : center;
+    padding-top : 40px;
+    margin-left : 25px;
+}
+.SBC{
+    margin-top: 100px;
+}
+#sbc{
+    height : 320px;
+    padding-left : 100px;
+}
+.Logo{
+    display : flex;
+    flex-direction: column;
+    display : 2px solid black;
+    
+}
+.Logocon{
+    display : flex;
+    flex-direction: column;
+    display : 2px solid black;
+    padding-left : 40px;
+}
+#logo1{
+    width : 80%;
+}
+
+.logocon1{
+    display:flex;
+    margin-top : 50px;
+}
+.logocon2{
+    display:flex;
+    margin-top : 50px;
+}
