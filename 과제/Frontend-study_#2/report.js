@@ -37,16 +37,6 @@ for(let i = 0; i < 10; i++){
 	else
 		randList.push(randNum);
 	}
-// const randList = [];
-// for(let i = 0; i<10; i ++){
-// 	randNum = Math.floor(Math.random()*100);
-// 	randList.push(randNum);
-// }
-// const nonRandList = randList.filter((element,index)=>{
-// 	return randList.indexOf(element) === index;
-// })
-// console.log(nonRandList);
-
 // --------------------------------------------------------------------
 
 const bookCafe_arr = ["아메리카노","바닐라라떼","카라멜모카","카페모카","카푸치노","카페라떼","에스프레소"];
