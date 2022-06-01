@@ -9,7 +9,7 @@ for(let i = 0; i < numbers.length; i++){
 	for(let j = 0; j < newNumbers.length; j++){
 		if(newNumbers[j] === numbers[i]) check = 0;
 	}
-	if(check) newNumbers.push(numbers[i]);
+	if(check) newNumbers[newNumbers.length] = numbers[i];
 }
 // --------------------------------------------------------------------
 
