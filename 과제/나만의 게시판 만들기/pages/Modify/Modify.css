@@ -1,0 +1,59 @@
+#root{
+    height : 100%;
+}
+.modifyContainer{
+    width : 50%;
+    height: 100%;
+    margin : auto;
+    padding-bottom : 3em;
+    border : 1px solid black;
+}
+.modifyHeader{
+    display : flex;
+    justify-content: space-between;
+    font-size: 30px;
+    padding: 0.5em 0 0.5em 3em;
+    border-bottom: 2px solid #9E9E9E;
+}
+.modifyTitle{
+    font-weight: bolder;
+}
+.modifyingBtn{
+    background-color: #464646;
+    border-radius: 8px;
+    border : none;
+    color : white;
+    padding : 0 1em;
+    margin-right : 1em;
+}
+.modifyContent{
+    height : 100%;
+    text-align: center;
+}
+.modifySelect{
+    width : 70%;
+    margin : auto;
+    margin: 2em 0;
+    font-size: 20px;
+    height : 40px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-left : 10px;
+}
+.modifyText{
+    width : 70%;
+    font-size: 20px;
+    border : none;
+    border-bottom : 2px solid #9E9E9E;
+    margin : auto;
+    margin-bottom: 1em;
+}
+.modifyQuestion{
+    width : 70%;
+    margin : auto;
+    border : none;
+    font-size: 20px;
+    height : 50%;
+    resize: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}

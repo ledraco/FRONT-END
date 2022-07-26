@@ -1,0 +1,60 @@
+#root{
+    height : 100%;
+}
+.postContainer{
+    width : 50%;
+    height: 100%;
+    margin : auto;
+    padding-bottom : 3em;
+    border : 1px solid black;
+}
+.postHeader{
+    display : flex;
+    justify-content: space-between;
+    font-size: 30px;
+    padding: 0.5em 0 0.5em 3em;
+    border-bottom: 2px solid #9E9E9E;
+}
+.postTitle{
+    font-weight: bolder;
+}
+.postingBtn{
+    background-color: #464646;
+    border-radius: 8px;
+    border : none;
+    color : white;
+    padding : 0 1em;
+    margin-right : 1em;
+}
+.postContent{
+    height : 100%;
+    text-align: center;
+}
+.select{
+    width : 70%;
+    margin : auto;
+    margin: 2em 0;
+    font-size: 20px;
+    height : 40px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-left : 10px;
+}
+.postText{
+    width : 70%;
+    font-size: 20px;
+    border : none;
+    border-bottom : 2px solid #9E9E9E;
+    margin : auto;
+    margin-bottom: 1em;
+}
+.postQuestion{
+    width : 70%;
+    margin : auto;
+    color : #9E9E9E;
+    border : none;
+    font-size: 20px;
+    height : 50%;
+    resize: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}

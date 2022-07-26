@@ -1,0 +1,68 @@
+html{
+    height : 100%;
+}
+body{
+    height : 100%;
+}
+#root{
+    height : 100%;
+}
+.listContainer{
+    width : 50%;
+    height : auto;
+    min-height: 100%;
+    margin : auto;
+    padding-bottom : 3em;
+    border : 1px solid black;
+}
+.head{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding : 0.5em 0;
+    border-bottom : 2px solid #9E9E9E;
+}
+.postList{
+    display : flex;
+    flex-direction: column;
+}
+.listTitle{
+    padding: 5px;
+    text-decoration: none;
+    color : black;
+}
+.listTitle:hover{
+    color :#4891FF;
+}
+.listQuestion{
+    color : #9E9E9E;
+    padding: 5px;
+}
+.listInfo{
+    display : flex;
+    justify-content: space-between;
+    border-bottom : 2px solid black;
+    color : #4891FF;
+    padding : 5px;
+}
+.listDetail{
+    display : flex;
+    width : 20%;
+    justify-content: space-between;
+}
+.postBtn{
+    text-align: center;
+    width : 50%;
+    margin : auto;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    height : 3em;
+    position: relative;
+    transform: translateY(-100%);
+    bottom : 2px;
+}
+.postBtn a{
+    line-height: 3em;
+    text-decoration: none;
+    color : #5E5E5E;
+}
