@@ -1,20 +1,12 @@
 import React from 'react';
-import './Detail.css'
-import commentIcon from './Union.png';
-import Modal from '../../components/Modal'
+import '../styles/Detail.css';
+import commentIcon from '../Images/Union.png';
+import Modal from '../components/Modal';
+import getDate from '../components/getDate';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Detail = () => {
-
-    //모달창 열고 닫힘 여부
-    const [modalOpen, setModalOpen] = useState(false);
-    const openModal = () => {
-        setModalOpen(true);
-    };
-    const closeModal = () => {
-        setModalOpen(false);
-    };
 
     //글목록에서 넘겨받은 글 id로 해당 글 객체 찾기
     const location = useLocation();
@@ -22,6 +14,11 @@ const Detail = () => {
     const postList = JSON.parse(window.localStorage.getItem('postList'));
     let selectedPost;
     postList.map((e)=>{if(e.id == postId) selectedPost = e});
+
+    //모달창 열고 닫힘 여부
+    const [modalOpen, setModalOpen] = useState(false);
+    const openModal = () => {setModalOpen(true);};
+    const closeModal = () => {setModalOpen(false);};
 
     //input : 댓글, commentCnt : 댓글 개수 useState 초깃값으로 글목록의 댓글 갯수
     const [input,setInput] = useState('');
@@ -44,17 +41,6 @@ const Detail = () => {
         else alert('양식을 채워주시길 바랍니다!');
     }
 
-    //날짜,시간 구하기!
-    function getDate(){
-        let getTime = new Date();
-        let month = ('0' + (getTime.getMonth()+1)).slice(-2);
-        let day = ('0' + getTime.getDate()).slice(-2);
-        let hours = ('0' + getTime.getHours()).slice(-2);
-        let minutes = ('0' + getTime.getMinutes()).slice(-2);
-        let date = month + '-' + day +' '+ hours + ':' + minutes;
-        return date;
-    }
-    
     //getCommentList : commentList에서 현재 글과 같은 id를 가진 댓글 목록
     let getCommentList = [];
     JSON.parse(window.localStorage.getItem('commentList')).map((e)=>{

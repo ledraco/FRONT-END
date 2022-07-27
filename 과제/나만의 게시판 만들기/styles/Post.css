@@ -1,24 +1,24 @@
 #root{
     height : 100%;
 }
-.modifyContainer{
+.postContainer{
     width : 50%;
     height: 100%;
     margin : auto;
     padding-bottom : 3em;
     border : 1px solid black;
 }
-.modifyHeader{
+.postHeader{
     display : flex;
     justify-content: space-between;
     font-size: 30px;
     padding: 0.5em 0 0.5em 3em;
     border-bottom: 2px solid #9E9E9E;
 }
-.modifyTitle{
+.postTitle{
     font-weight: bolder;
 }
-.modifyingBtn{
+.postingBtn{
     background-color: #464646;
     border-radius: 8px;
     border : none;
@@ -26,11 +26,13 @@
     padding : 0 1em;
     margin-right : 1em;
 }
-.modifyContent{
-    height : 100%;
+.postContent{
+    height : 50%;
     text-align: center;
+    border : 2px solid blue;
+    margin-bottom: 1em;
 }
-.modifySelect{
+.select{
     width : 70%;
     margin : auto;
     margin: 2em 0;
@@ -40,7 +42,7 @@
     border-radius: 15px;
     padding-left : 10px;
 }
-.modifyText{
+.postText{
     width : 70%;
     font-size: 20px;
     border : none;
@@ -48,12 +50,19 @@
     margin : auto;
     margin-bottom: 1em;
 }
-.modifyQuestion{
+.postQuestion{
     width : 70%;
     margin : auto;
+    color : #9E9E9E;
     border : none;
-    font-size: 20px;
-    height : 50%;
+    font-size: 15px;
+    height : 40%;
     resize: none;
     font-family: Verdana, Tahoma, sans-serif;
+}
+.preview{
+    border : 2px solid black;
+    width : 80%;
+    margin : auto;
+    height : 40%;
 }

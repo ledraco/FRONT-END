@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.css';
+import '../styles/Modal.css';
 import { Link,useNavigate} from 'react-router-dom';
 
 const Modal = (props) => {
@@ -8,7 +8,7 @@ const Modal = (props) => {
     const navigate = useNavigate();
 
     //해당 글의 index를 찾아 postList에서 삭제
-    const handleRemove = (id) =>{
+    const handleRemove = () =>{
         let postList = JSON.parse(window.localStorage.getItem('postList'));
         const index = postList.findIndex((e)=>(e.id == postId))
         if(index>-1){
