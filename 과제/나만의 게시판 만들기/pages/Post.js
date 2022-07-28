@@ -7,6 +7,7 @@ import Select from '../components/Select';
 import TextArea from '../components/TextArea';
 import Title from '../components/Title';
 import Preview from '../components/Preview';
+import PostList from '../components/PostList';
 import Header from '../components/Header';
 
 const Post = () => {
@@ -20,6 +21,8 @@ const Post = () => {
     const handleQuestion = (e) =>{setQuestion(e.target.value)};
 
     const navigate = useNavigate();
+
+    const postLists = JSON.parse(window.localStorage.getItem('postList'));
 
     // 제목과 질문내용 작성 시 postList에 새로운 글을 추가
     const handleSubmit = ()=>{
@@ -35,7 +38,7 @@ const Post = () => {
             postList.unshift(post);
             let strPostList = JSON.stringify(postList);
             window.localStorage.setItem('postList',strPostList);
-            navigate('/');
+            navigate('/Post');
         }
         else alert('양식을 채워주시길 바랍니다!');
     }
@@ -48,7 +51,11 @@ const Post = () => {
                 <Title handleTitle={handleTitle} placeholder='제목'/>
                 <TextArea handleQuestion={handleQuestion} placeholder='질문을 입력해주세요'/>
             </div>
-            <Preview date = {getDate()} title = {title} question = {question}/>
+            <div className = 'postList2'>
+                {(postLists !== null) ? <PostList postLists = {postLists}/> : null}
+            </div>
+            {/* <Preview date = {getDate()} title = {title} question = {question}/> */}
+            
         </div>
     );
 };
