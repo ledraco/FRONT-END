@@ -74,7 +74,43 @@
 .commentContainer{
     width : 90%;
     margin : auto;
+    overflow-y: scroll;
+    max-height: 300px;
 }
 .commentBox{
-    border-bottom: 2px solid #979797;
+    border-bottom: 2px solid #E6E6E6;
+}
+.commentItem{
+    display : flex;
+    justify-content: space-between;
+}
+.replybox{
+    display : flex;
+    margin: 5px;
+    border-bottom: 2px solid #E6E6E6;
+}
+.replytInputBox{
+    display :flex;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    height : 30px;
+    margin : 5px;
+    border-radius: 8px;
+}
+.replyInput{
+    border : none;
+    background : transparent;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+.replyInputBtn{
+    border-radius: 8px;
+    border : none;
+    margin : 0 1px;
+}
+.replyInput:focus{
+    outline:none;
+}
+.replyInputBtn:focus{
+    outline:none;
 }

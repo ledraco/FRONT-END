@@ -1,10 +1,14 @@
 import React from 'react';
 import '../styles/Detail.css';
 import commentIcon from '../Images/Union.png';
-import Modal from '../components/Modal';
 import getDate from '../components/getDate';
+import CommentInput from '../components/Comment/CommentInput'
+import CommentBox from '../components/Comment/CommentBox';
+import ReplyForm from '../components/Reply/ReplyForm';
+import DetailContent from '../components/Detail/DetailContent';
+import ReplyList from '../components/Reply/ReplyList';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import {Navigate, useLocation, useNavigate} from 'react-router-dom';
 
 const Detail = () => {
 
@@ -14,11 +18,6 @@ const Detail = () => {
     const postList = JSON.parse(window.localStorage.getItem('postList'));
     let selectedPost;
     postList.map((e)=>{if(e.id == postId) selectedPost = e});
-
-    //모달창 열고 닫힘 여부
-    const [modalOpen, setModalOpen] = useState(false);
-    const openModal = () => {setModalOpen(true);};
-    const closeModal = () => {setModalOpen(false);};
 
     //input : 댓글, commentCnt : 댓글 개수 useState 초깃값으로 글목록의 댓글 갯수
     const [input,setInput] = useState('');
@@ -31,12 +30,15 @@ const Detail = () => {
         if(input.length !== 0){
             let cmt = {};
             cmt.id = postId;
+            cmt.commentId = Date.now();
             cmt.comment = input;
             cmt.date = getDate();
+            cmt.reply = [];
             let commentList = JSON.parse(window.localStorage.getItem('commentList'));
             commentList.push(cmt);
             let strCommentList = JSON.stringify(commentList);
             window.localStorage.setItem('commentList',strCommentList);
+            window.location.reload();
         }
         else alert('양식을 채워주시길 바랍니다!');
     }
@@ -48,10 +50,10 @@ const Detail = () => {
             getCommentList.push(e);                                                                                                                                               
         }
     })
-
+    
     //글의 댓글에 변경이 생기면 setCommetCnt로 댓글수 변경 및 postList에 최신화
     useEffect(()=>{
-        setCommentCnt(getCommentList.length);
+        setCommentCnt(getCommentList.length + getReplyCnt());
         let postList = JSON.parse(window.localStorage.getItem('postList'));
         let index = postList.findIndex((e)=>(e.id == postId));
         postList[index].commentCnt = commentCnt;
@@ -59,41 +61,65 @@ const Detail = () => {
         window.localStorage.setItem('postList',strPostList);
     },[getCommentList])
 
+
+    //-------------------------------------------대댓글-------------------------------------------
+
+    //대댓글 갯수 
+    const getReplyCnt = () => {
+        let replyCnt = 0;
+        getCommentList.map((e)=>{replyCnt += e.reply.length})
+        return replyCnt;
+    }
+
+    const [reply,setReply] = useState(false);
+    const [curCommentId,setCurCommentId] = useState('');
+    const [replyInput,setReplyInput] = useState('');
+
+    const handleReply = (commentId) =>{
+        setReply(!reply);
+        setCurCommentId(commentId);
+    }
+    
+    const handleReplyInput = (e) =>{setReplyInput(e.target.value)}
+
+    const submitReply= () =>{
+        if(replyInput.length !== 0){
+            // reple : 대댓글
+            let reple = {};
+            reple.comment = replyInput;
+            reple.date = getDate();
+            let commentList = JSON.parse(window.localStorage.getItem('commentList'));
+            commentList.map((e)=>{
+                if(e.id == postId && e.commentId === curCommentId){
+                    e.reply.push(reple);
+                }
+            })
+            let strCommentList = JSON.stringify(commentList);
+            window.localStorage.setItem('commentList',strCommentList);
+            window.location.reload();
+        }
+        else alert("대댓글을 작성해주시길 바랍니다!")
+    }
+
     return (
         <>
             <div className='detailContainer'>
-                <div className='detailHeader'>
-                    <button className='modifyBtn' onClick={openModal}>수정/삭제</button>
-                    {/* //모달창  */}
-                    <Modal open={modalOpen} close={closeModal} header="수정 / 삭제" postId = {postId}></Modal>
-                    <div className='detailDate'>{selectedPost.date}</div>
-                    <div className='detailTitle'>{selectedPost.title}</div>
-                </div>
-                <div className='detailQuestion'>{selectedPost.question}</div>
-                <div className='commentCount'><img src = {commentIcon}/>{commentCnt}</div>
+                <DetailContent postId = {postId} selectedPost = {selectedPost} commentCnt = {commentCnt} />
                 <div className='commentContainer'>
                     {
                         getCommentList.map((e)=>{
                             return(
-                                <div className='commentBox'>
-                                    <div>{e.date}</div>
-                                    <div>{e.comment}</div>
+                                <div>
+                                    <CommentBox e = {e} handleReply = {handleReply} commentIcon = {commentIcon}/>
+                                    {reply === true && e.commentId == curCommentId ?<ReplyForm handleReplyInput={handleReplyInput} submitReply = {submitReply}/>: null}
+                                    <ReplyList e = {e}/>
                                 </div>
                             )})
                     }
                 </div>
             </div>
-            <div className='detailComment'>
-                <input 
-                    type = 'text' 
-                    className='detailInput'
-                    placeholder='오늘만큼은 당신도 해결사!'
-                    onChange={handleComment}
-                    ></input>
-                <button className='detailBtn' onClick={handleSubmit}>입력</button>
-            </div>
+            <CommentInput handleComment = {handleComment} handleSubmit = {handleSubmit}/>
         </>
     );
 };
-
 export default Detail;

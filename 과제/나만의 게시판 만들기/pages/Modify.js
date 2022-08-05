@@ -21,7 +21,7 @@ const Modify = () => {
     let selectedPost;
     postList.map((e)=>{if(e.id == postId) selectedPost = e});
 
-
+    //기존값!
     const [Selected,setSelected] = useState(selectedPost.category);
     const [title,setTitle] = useState(selectedPost.title);
     const [question,setQuestion] = useState(selectedPost.question);

@@ -25,6 +25,14 @@ body{
 .postList{
     display : flex;
     flex-direction: column;
+    overflow-y: scroll;
+    max-height: 690px;
+}
+.postList2{
+    display : flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 400px;
 }
 .listTitle{
     padding: 5px;

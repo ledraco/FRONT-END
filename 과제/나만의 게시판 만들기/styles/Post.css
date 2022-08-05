@@ -6,7 +6,6 @@
     height: 100%;
     margin : auto;
     padding-bottom : 3em;
-    border : 1px solid black;
 }
 .postHeader{
     display : flex;
@@ -29,8 +28,8 @@
 .postContent{
     height : 50%;
     text-align: center;
-    border : 2px solid blue;
     margin-bottom: 1em;
+    border-bottom: 2px solid #9E9E9E;
 }
 .select{
     width : 70%;

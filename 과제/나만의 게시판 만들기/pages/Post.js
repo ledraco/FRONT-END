@@ -6,7 +6,6 @@ import getDate from '../components/getDate';
 import Select from '../components/Select';
 import TextArea from '../components/TextArea';
 import Title from '../components/Title';
-import Preview from '../components/Preview';
 import PostList from '../components/PostList';
 import Header from '../components/Header';
 
@@ -54,8 +53,6 @@ const Post = () => {
             <div className = 'postList2'>
                 {(postLists !== null) ? <PostList postLists = {postLists}/> : null}
             </div>
-            {/* <Preview date = {getDate()} title = {title} question = {question}/> */}
-            
         </div>
     );
 };
